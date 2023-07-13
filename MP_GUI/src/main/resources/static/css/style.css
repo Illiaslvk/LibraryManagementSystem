@@ -1,0 +1,214 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header {
+    text-align: center;
+    background-color: #928490;
+    padding: 10px;
+    color: #ffffff;
+}
+
+h1,
+h2,
+h3 {
+    display: inline-block;
+    margin: 0;
+    padding: 0 10px;
+}
+
+h1,
+h3 {
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+main {
+    flex-grow: 1;
+}
+
+footer {
+    text-align: center;
+    background-color: #928490;
+    padding: 10px;
+    color: #ffffff;
+}
+
+.center-button-reserve {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #928490;
+    color: #101011;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.table-book-select {
+    background: #928490;
+    border-radius: 0.25em;
+    border-collapse: collapse;
+    margin: auto;
+    align-self: center;
+    vertical-align: center;
+    margin-top: 2rem;
+    color: #fff;
+    width: 80%;
+}
+
+.table-book-select th {
+    border-bottom: 1px solid #364043;
+    color: #ffffff;
+    font-size: 0.85em;
+    font-weight: 600;
+    padding: 0.5em 1em;
+    text-align: left;
+}
+
+.table-book-select td {
+    font-weight: 400;
+    padding: 0.65em 1em;
+}
+
+.table-book-select tbody tr {
+    transition: background 0.25s ease;
+}
+
+.table-book-select tbody tr:hover {
+    background: #364043;
+}
+
+.center-button-reserve {
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 12px;
+    background-color: #433E49;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #433E49;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.button-container-continue {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+}
+
+.continue-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #433E49;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/*final*/
+/*date*/
+input[type="date"] {
+    background-color: #928490;
+    padding: 5px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    margin-top: 25px;
+    margin-left: 160px;
+    font-family: "Roboto Mono", monospace;
+    color: #101011;
+    font-size: 12px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+::-webkit-calendar-picker-indicator {
+    background-color: #ffffff;
+    padding: 2px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.date-picker-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+.date-picker {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.date-picker:last-child {
+    margin-right: 0;
+}
+
+.center-button-cancel {
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #433E49;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/*.center-button-finish {*/
+/*    position: absolute;*/
+/*    bottom: 50px;*/
+/*    right: 20px;*/
+/*    padding: 10px 20px;*/
+/*    font-size: 16px;*/
+/*    background-color: #433E49;*/
+/*    color: #ffffff;*/
+/*    border: none;*/
+/*    border-radius: 20px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+
+.center-menu-button-submit {
+    position: absolute;
+    bottom: 50px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #433E49;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}

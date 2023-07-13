@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GUI</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <style>
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .error-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+        /* delete underline */
+        .center-button-cancel {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <h1>Home</h1>
+    <h2>Reservation in process..</h2>
+    <h3>About</h3>
+</header>
+
+<main>
+
+    <div>
+        <h2>Book Description</h2>
+    </div>
+    <table class="table-book-select">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Authors</th>
+            <th>Genre</th>
+            <th>Price</th>
+            <th>Edition</th>
+            <th>Year of Writing</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="book : ${book}">
+            <td th:text="${book.name}"></td>
+            <td th:text="${book.authors}"></td>
+            <td th:text="${book.bookGenre}"></td>
+            <td th:text="${book.price}"></td>
+            <td th:text="${book.edition}"></td>
+            <td th:text="${book.yearOfWriting}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <form id="final" method="get" th:action="@{/final/approval}">
+<!--    <form method="post" action="/submitReservation">-->
+        <input type="hidden" id="bookId" name="bookId" th:value="${book.id}">
+
+        <div class="date-picker-div">
+            <div class="date-picker">
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" onchange="validateDates()">
+            </div>
+            <div class="date-picker">
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" name="endDate" onchange="validateDates()">
+            </div>
+        </div>
+
+        <div class="error-container">
+            <span id="startDateError" class="error-message"></span>
+            <span id="endDateError" class="error-message"></span>
+        </div>
+
+        <div class="center-button">
+            <a th:href="@{/}" class="center-button-cancel" id="cancel-button-final-cancel">Cancel</a>
+<!--            <button type="submit" class="center-button-finish" id="finish-button-final-finish" onclick="return validateDates()">Finish</button>-->
+        </div>
+        <button id="createReservation" class="center-menu-button-submit">Submit Reservation</button>
+    </form>
+<!--    </form>-->
+
+
+<!--    <form id="final" method="get" th:action="@{/final/approval}">-->
+<!--        <input type="hidden" id="bookId" name="bookId" th:value="${book.id}">-->
+<!--        <input type="hidden" id="formStartDate" name="formStartDate" value="09-09-2022"/>-->
+<!--        <input type="hidden" id="formEndDate" name="formEndDate" value="23-03-2023"/>-->
+<!--        <button id="createReservation" class="center-menu-button-submit">Submit Reservation</button>-->
+<!--    </form>-->
+
+</main>
+
+<footer>
+    Illia Solovko s22460
+</footer>
+
+<script>
+    function validateDates() {
+        var startDate = document.getElementById("startDate").value;
+        var endDate = document.getElementById("endDate").value;
+        var startDateError = document.getElementById("startDateError");
+        var endDateError = document.getElementById("endDateError");
+
+        if (startDate === "" || endDate === "") {
+            startDateError.innerHTML = "Please select both start and end dates.";
+            endDateError.innerHTML = "";
+            return false;
+        } else if (startDate > endDate) {
+            startDateError.innerHTML = "Start date should be before the end date.";
+            endDateError.innerHTML = "";
+            return false;
+        } else if (new Date(startDate) < new Date()) {
+            startDateError.innerHTML = "Start date should be in the future.";
+            endDateError.innerHTML = "";
+            return false;
+        } else {
+            startDateError.innerHTML = "";
+            endDateError.innerHTML = "";
+            return true;
+        }
+    }
+
+</script>
+
+</body>
+
+</html>
