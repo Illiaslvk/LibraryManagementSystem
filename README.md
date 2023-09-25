@@ -13,7 +13,8 @@ enhance the library experience.
 6. Spring Web
 
 # UML
-![image](https://github.com/Illiaslvk/Library/assets/101345368/4014175b-58a6-497b-b2ae-e3aa2fe298f3)
+![](https://github.com/Illiaslvk/Library/assets/101345368/3ca57603-1283-45f4-a112-22a17e8de257)
+
 
 # PROTOTYPE(figma)
 <img width="1440" alt="1" src="https://github.com/Illiaslvk/Library/assets/101345368/6d46d616-9afe-469d-994c-a1f913c668eb">
